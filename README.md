@@ -2,6 +2,17 @@
 
 本仓库包含 Phira MP NodejsVer 服务器的插件索引，列出所有官方维护的插件及其仓库链接。
 
+## 插件列表
+
+| 插件 | 仓库链接 | 说明 | 最新版本 |
+|------|---------|------|---------|
+| WebSocket Support | `git@github.com:chuzouX/phira-mp-nodejsver-websocket.git` | WebSocket 实时通信支持 | v1.2.0 |
+| Web Dashboard | `git@github.com:chuzouX/phira-mp-nodejsver-web-dashboard.git` | Web 管理面板 | v1.7.0 |
+| Room Announcer | `git@github.com:chuzouX/phira-mp-nodejsver-room-announcer.git` | 房间列表实时播报 | v1.5.0 |
+| Titles | `git@github.com:chuzouX/phira-mp-nodejsver-titles.git` | 称号系统（擂主+累计） | v1.0.0 |
+| NoneBot Auth | `git@github.com:chuzouX/phira-mp-nodejsver-nonebot-auth.git` | 基于密钥的管理员鉴权 | — |
+| Tournament | `git@github.com:chuzouX/phira-mp-nodejsver-tournament.git` | 排行榜模式比赛插件 | — |
+
 ## 插件安装教程
 
 ### 方式一：Git Clone（推荐）
@@ -14,6 +25,7 @@ cd plugins
 git clone https://github.com/chuzouX/phira-mp-nodejsver-web-dashboard.git web-dashboard
 git clone https://github.com/chuzouX/phira-mp-nodejsver-websocket.git websocket
 git clone https://github.com/chuzouX/phira-mp-nodejsver-room-announcer.git room-announcer
+git clone https://github.com/chuzouX/phira-mp-nodejsver-titles.git titles
 ```
 
 ### 方式二：下载 ZIP
@@ -72,6 +84,10 @@ plugins/
 │   ├── plugin.yaml
 │   └── res/
 │       └── main.js
+├── titles/                 # 称号系统
+│   ├── plugin.yaml
+│   └── res/
+│       └── main.js
 └── !disabled-plugin/       # 以 ! 开头 = 禁用状态，不会被加载
     └── plugin.yaml
 ```
@@ -83,7 +99,8 @@ plugins/
 1. **WebSocket Support** — 基础通信层（无依赖）
 2. **Web Dashboard** — Web UI 面板（依赖 websocket）
 3. **Room Announcer** — 房间播报（依赖 websocket）
-4. **其他独立插件** — 无依赖，可任意顺序安装
+4. **Titles** — 称号系统（依赖 websocket）
+5. **其他独立插件** — 无依赖，可任意顺序安装
 
 ### 手动安装 vs 包管理器
 
@@ -92,18 +109,6 @@ plugins/
 - 通过控制台命令或重启加载
 
 未来版本计划支持自动化包管理器，实现一键安装。
-
----
-
-## 插件列表
-
-| 插件 | 仓库链接 | 说明 |
-|------|---------|------|
-| WebSocket Support | `git@github.com:chuzouX/phira-mp-nodejsver-websocket.git` | WebSocket 实时通信支持 |
-| Web Dashboard | `git@github.com:chuzouX/phira-mp-nodejsver-web-dashboard.git` | Web 管理面板 |
-| NoneBot Auth | `git@github.com:chuzouX/phira-mp-nodejsver-nonebot-auth.git` | 基于密钥的管理员鉴权 |
-| Room Announcer | `git@github.com:chuzouX/phira-mp-nodejsver-room-announcer.git` | 房间列表实时播报 |
-| Tournament | `git@github.com:chuzouX/phira-mp-nodejsver-tournament.git` | 排行榜模式比赛插件 |
 
 ## 许可证
 
